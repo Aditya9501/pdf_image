@@ -1,0 +1,20 @@
+import re
+import pandas as pd
+import PyPDF2
+from pdf2image import convert_from_path
+import cv2
+from PIL import Image
+import pytesseract
+import matplotlib.pyplot as plt
+
+# Path to the input PDF file containing scanned pages
+pdf_path = 'your path'
+pp = r'C:\Program Files\poppler-23.05.0\Library\bin'
+
+# Convert the PDF pages to images
+images = convert_from_path(pdf_path,poppler_path=pp)
+
+# Loop through the images and display them
+for page_num, image in enumerate(images, start=1):
+        image.save(f"page_{page_num)}.jpg")
+        
